@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Cliente - {{ cli_nome }}</title>
+    {% load staticfiles %}
+    <!-- Bootstrap core CSS -->
+    <link rel="icon" type="image/png" href="{% static '/img/favicon.ico' %}" />
+    <!-- Custom styles for this template -->
+    <style type="text/css">
+        body {
+        }
+        div.cabeca {
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+        }
+        div.direita {
+            text-align: right;
+        }
+        div.pe {
+            position: fixed;
+            height: 50px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            margin-bottom: 0px;
+            text-align:center;
+        }
+        .formulario {
+            font-size: 20px;
+            font-weight: bold;
+            padding:4px;
+        }
+        .dados {
+            font-size: 18px;
+            padding: 4px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+        .navbar-brand {
+            background: url('../../static/img/logo_delta.png');
+            width: 86px;
+            height: 75px;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class='cabeca'>
+            <p> Dados do Cliente</p>
+        </div><br /><br />
+        <div>
+            <label class="formulario">Nome:</label><br />
+            <label class="dados">{{cli_nome}}</label>
+        </div><br />
+        {% if cli_nasc %}
+            <div>
+                <label class="formulario">Data de Nasc:</label><br />
+                <label class="dados">{{cli_nasc}}</label>
+            </div><br />
+        {% endif %}
+        {% if cli_hab %}
+            <div>
+                <label class="formulario">Vencimento da Hab.:</label><br />
+                <label class="dados">{{cli_hab}}</label>
+            </div><br />
+        {% endif %}
+        {% if cli_rg %}
+            <div>
+                <label class="formulario">RG:</label><br />
+                <label class="dados">{{cli_rg}}</label>
+            </div><br />
+        {% endif %}
+        {% if cli_cpf %}
+            <div>
+                <label class="formulario">CPF:</label><br />
+                <label class="dados">{{cli_cpf}}</label>
+            </div><br />
+        {% endif %}
+        {% if cli_end or cli_num %}
+            <div>
+                <label class="formulario">Endereco:</label><br />
+                <label class="dados">{{cli_end}}, {{cli_num}}</label>
+            </div><br />
+        {% endif %}
+        {% if cli_bairro %}
+            <div>
+                <label class="formulario">Bairro:</label><br />
+                <label class="dados">{{cli_bairro}}</label>
+            </div><br />
+        {% endif %}
+        {% if cli_cep %}
+        <div>
+            <label class="formulario">CEP:</label><br />
+            <label class="dados">{{cli_cep}}</label>
+        </div><br />
+        {% endif %}
+        {% if cli_cidade or cli_estado %}
+            <div>
+                <label class="formulario">Cidade - Estado:</label><br />
+                <label class="dados">{{cli_cidade}} - {{cli_estado}}</label>
+            </div><br />
+        {% endif %}
+        {% if cli_te %}
+            <div>
+                <label class="formulario">Telefone:</label><br />
+                <label class="dados">{{cli_tel}}</label>
+            </div><br />
+        {% endif %}
+        {% if cli_cel %}
+            <div>
+                <label class="formulario">Celular:</label><br />
+                <label class="dados">{{cli_cel}}</label>
+            </div><br />
+        {% endif %}
+        {% if cli_mail %}
+            <div>
+                <label class="formulario">E-mail:</label><br />
+                <label class="dados">{{cli_mail}}</label>
+            </div>
+        {% endif %}
+        <div class="pe">
+            <hr />
+            <p>DELTATRES SEGUROS - DATA: {{hoje}}</p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+﻿{% extends 'base.html' %}
+
+{% block body %}
+{% load static %}
+<main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3 main-fundo">
+    <section class="row text-center placeholders">
+        <div class="jumbotron busca">
+            <div class="container">
+                <h1>Habilitações Vencidas</h1>
+                <hr />
+                <h4>Temos {{contador}} habilitações vencidas!</h4>
+                <hr />
+                <form method="POST" action="/home/visualizar">
+                    {%csrf_token%}
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <select name="cliente_id" class="form-control" required>
+                                <option disabled selected > -- Cliente -- Venc. Habilitação </option>
+                                {% for cliente in clientes %}
+                                <option value={{cliente.id}}>{{cliente.nome}} -- {{cliente.venc_habilitacao|date:"d/m/Y"}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <button type="submit" class="btn btn-primary float-right">Buscar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,82 @@
+﻿{% extends 'base.html' %}
+
+{% block body %}
+{% load static %}
+<main class="container "align="center">
+    <section class="row text-center placeholders">
+        <div class="jumbotron ">
+            <h1>Cliente</h1>
+            <form method="post">
+                {% csrf_token %}
+                <input type="hidden" name="cliente_id" value="{{cli_obj.id}}" />
+                <div class="form-row">
+                    <div class="form-group col-md-9">
+                        <label for="inputName">Nome Completo </label><br />
+                        <label class="visu" for="inputName">{{cli_obj.nome}} </label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputTel">Data de Nasc.</label><br />
+                        <label class="visu" for="inputTel">{{cli_obj.data_nasc|date:"d/m/Y"}}</label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputTel">Venc. Habilitação</label><br />
+                        <label class="visu" for="inputTel">{{cli_obj.venc_habilitacao|date:"d/m/Y"}}</label>
+                    </div>
+                    <div class="form-group col-md-3">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputTel">RG</label><br />
+                        <label class="visu" for="inputTel">{{cli_obj.rg}}</label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputTel">CPF</label><br />
+                        <label class="visu" for="inputTel">{{cli_obj.cpf}}</label>
+                    </div>
+                    <div class="form-group col-md-7">
+                        <label for="inputName">Endereço</label><br />
+                        <label class="visu" for="inputTel">{{cli_obj.endereco}}</label>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputTel">Num.</label><br />
+                        <label class="visu" for="inputTel">{{cli_obj.numero}}</label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputName">Bairro</label><br />
+                        <label class="visu" for="inputTel">{{cli_obj.bairro}}</label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputName">CEP</label><br />
+                        <label class="visu" for="inputTel">{{cli_obj.cep}}</label>
+                    </div>
+                    <div class="form-group col-md-3">
+
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputName">Cidade</label><br />
+                        <label class="visu" for="inputTel">{{cli_obj.cidade}}</label>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputName">Estado</label><br />
+                        <label class="visu" for="inputTel">{{cli_obj.estado}}</label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputTel">Telefone</label><br />
+                        <label class="visu" for="inputTel">{{cli_obj.telefone}}</label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputCel">Celular</label><br />
+                        <label class="visu" for="inputTel">{{cli_obj.celular}}</label>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail">E-mail</label><br />
+                        <label class="visu" for="inputTel">{{cli_obj.email}}</label>
+                    </div>
+                </div>
+                
+                <br />
+                <button type="submit" formaction="/home/editar" class="btn btn-primary float-right">Editar</button>
+            </form>
+        </div>
+    </section>
+</main>
+{% endblock %}

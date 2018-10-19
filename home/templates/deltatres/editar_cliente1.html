@@ -1,0 +1,82 @@
+﻿{% extends 'base_deltatres.html' %}
+
+{% block body %}
+{% load static %}
+<main class="container " align="center">
+    <section class="row text-center placeholders">
+        <div class="jumbotron ">
+            <h1>Editar Cliente</h1>
+            <form method="post" action="/deltatres/salvar">
+                {% csrf_token %}
+                <input type="hidden" name="cliente_id" value="{{cli_obj.id}}" />
+                <div class="form-row">
+                    <div class="form-group col-md-9">
+                        <label for="inputName">Nome Completo </label>
+                        <input type="text" class="form-control" id="inputEmail4" name="name" maxlength="200" value="{{cli_obj.nome}}" required autofocus>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputTel">Data de Nasc.</label>
+                        <input type="date" class="form-control" id="inputPassword4" name="data_nasc">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputTel">Venc. Habilitação</label>
+                        <input type="date" class="form-control" id="inputPassword4" name="venc_hab">
+                    </div>
+                    <div class="form-group col-md-3">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputTel">RG</label>
+                        <input type="text" class="form-control" id="inputPassword4" value="{{cli_obj.rg}}" maxlength="20" name="rg">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputTel">CPF</label>
+                        <input type="text" class="form-control" id="inputPassword4" value="{{cli_obj.cpf}}" maxlength="20" name="cpf">
+                    </div>
+                    <div class="form-group col-md-7">
+                        <label for="inputName">Endereço</label>
+                        <input type="text" class="form-control" id="inputEmail4" value="{{cli_obj.endereco}}" maxlength="200" name="end">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputTel">Num.</label>
+                        <input type="number" class="form-control" id="inputPassword4" value="{{cli_obj.numero}}" maxlength="6" name="num">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputName">Bairro</label>
+                        <input type="text" class="form-control" id="inputEmail4" maxlength="100" value="{{cli_obj.bairro}}" name="bairro">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputName">CEP</label>
+                        <input type="text" class="form-control" id="inputEmail4" maxlength="10" value="{{cli_obj.cep}}" name="cep">
+                    </div>
+                    <div class="form-group col-md-3">
+
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputName">Cidade</label>
+                        <input type="text" class="form-control" id="inputEmail4" maxlength="200" value="{{cli_obj.cidade}}" name="cidade">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputName">Estado</label>
+                        <input type="text" class="form-control" id="inputEmail4" maxlength="100" value="{{cli_obj.estado}}" name="estado">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputTel">Telefone</label>
+                        <input type="tel" class="form-control" id="inputPassword4" maxlength="20" value="{{cli_obj.telefone}}" name="tel">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="inputCel">Celular</label>
+                        <input type="tel" class="form-control" id="inputAddress" maxlength="20" value="{{cli_obj.celular}}" name="cel">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail">E-mail</label>
+                        <input type="email" class="form-control" id="inputAddress2" maxlength="200" value="{{cli_obj.email}}" name="mail">
+                    </div>
+                </div>
+
+                <br />
+                <button type="submit" class="btn btn-primary float-right">Salvar</button>
+            </form>
+        </div>
+    </section>
+</main>
+{% endblock %}

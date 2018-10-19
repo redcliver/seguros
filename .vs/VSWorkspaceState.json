@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\acesso",
+    "\\deltatres",
+    "\\deltatres\\static",
+    "\\deltatres\\static\\img",
+    "\\home",
+    "\\home\\static\\css",
+    "\\home\\templates",
+    "\\home\\templates\\deltatres",
+    "\\home\\templates\\home"
+  ],
+  "SelectedNode": "\\acesso\\views.py",
+  "PreviewInSolutionExplorer": false
+}
